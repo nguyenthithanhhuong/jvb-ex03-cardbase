@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #a0c3d2;
+}
+
+.slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide-item {
+    height: 54vh;
+    width: 18vw;
+    background-color: #f1efeb;
+    margin: 0 8px;
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.current-slide {
+    height: 64vh;
+    width: 22vw;
+}
+
+.prev-slide,
+.next-slide {
+    opacity: 0.5;
+}
+
+.prev-slide {
+    clip-path: polygon(0 0, 100% 6%, 100% 94%, 0 100%);
+}
+
+.next-slide {
+    clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 94%);
+}
