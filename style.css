@@ -9,19 +9,46 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #a0c3d2;
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.75); 
+    z-index: -1;
 }
 
 .slider {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100vw;
+    position: relative;
+}
+
+.prev-btn {
+    position: absolute;
+    left: 16%;
+    z-index: 2;
+}
+
+.next-btn {
+    position: absolute;
+    right: 16%;
+    z-index: 2;
 }
 
 .slide-item {
-    height: 54vh;
+    position: relative;
+    height: 58vh;
     width: 18vw;
-    background-color: #f1efeb;
     margin: 0 8px;
     background-position: center; 
     background-repeat: no-repeat;
@@ -29,19 +56,67 @@ body {
 }
 
 .current-slide {
+    position: absolute;
+    left: 0;
     height: 64vh;
     width: 22vw;
+    position: relative;
+    transition: transform 0.5s;
+}
+
+.rotate-left {
+    transform: perspective(800px) rotateY(-20deg);
+}
+
+.rotate-right {
+    transform: perspective(800px) rotateY(20deg);
+}
+
+.current-slide__before,
+.current-slide__after {
+    height: 64vh;
+    width: 11vw;
+    z-index: 1;
+}
+
+.current-slide__before {
+    position: absolute;
+    left: 39%;
+}
+
+.current-slide__after {
+    position: absolute;
+    right: 39%;
 }
 
 .prev-slide,
 .next-slide {
-    opacity: 0.5;
+    opacity: 0.4;
 }
 
 .prev-slide {
     clip-path: polygon(0 0, 100% 6%, 100% 94%, 0 100%);
+    position: absolute;
+    left: 19%;
 }
 
 .next-slide {
     clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 94%);
+    position: absolute;
+    right: 19%;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(10px);
+    }
 }
