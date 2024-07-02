@@ -8,7 +8,7 @@ const imagesItem = $$('.slide-item');
 let prevSlide = $('.prev-slide');
 let currentSlide = $('.current-slide');
 let nextSlide = $('.next-slide');
-
+ 
 const leftCurrentSlide = $('.current-slide__before');
 const rightCurrentSlide = $('.current-slide__after');
 
@@ -49,7 +49,6 @@ updateSlide = () => {
 
     const currentBackgroundUrl = currentSlide.style.backgroundImage;
     generateBackgroundImage(currentBackgroundUrl);
-    console.log(currentBackgroundUrl)
 }
 
 start = () => {

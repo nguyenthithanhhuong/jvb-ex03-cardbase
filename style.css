@@ -12,6 +12,7 @@ body {
     background-position: center; 
     background-repeat: no-repeat;
     background-size: cover;
+    transition: transform 0.5s ease-in-out;
 }
 
 body::before {
@@ -55,6 +56,12 @@ body::before {
     background-size: cover;
 }
 
+.prev-slide {
+    clip-path: polygon(0 0, 100% 6%, 100% 94%, 0 100%);
+    position: absolute;
+    left: 19%;
+}
+
 .current-slide {
     position: absolute;
     left: 0;
@@ -63,6 +70,12 @@ body::before {
     position: relative;
     transition: transform 0.5s;
     cursor: pointer;
+}
+
+.next-slide {
+    clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 94%);
+    position: absolute;
+    right: 19%;
 }
 
 .rotate-left {
@@ -93,18 +106,6 @@ body::before {
 .prev-slide,
 .next-slide {
     opacity: 0.5;
-}
-
-.prev-slide {
-    clip-path: polygon(0 0, 100% 6%, 100% 94%, 0 100%);
-    position: absolute;
-    left: 19%;
-}
-
-.next-slide {
-    clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 94%);
-    position: absolute;
-    right: 19%;
 }
 
 .prev-btn:hover,
