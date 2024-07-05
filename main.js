@@ -52,8 +52,8 @@ updateSlide = () => {
 }
 
 start = () => {
-    // prev-btn click event
-    prevBtn.addEventListener('click', function() {
+    // next-btn click event
+    nextBtn.addEventListener('click', function() {
         let tempSlide = prevSlide;
         prevSlide = currentSlide;
         currentSlide = nextSlide;
@@ -62,8 +62,8 @@ start = () => {
         updateSlide();
     });
 
-    // next-btn click event
-    nextBtn.addEventListener('click', function() {
+    // prev-btn click event
+    prevBtn.addEventListener('click', function() {
         let tempSlide = nextSlide;
         nextSlide = currentSlide;
         currentSlide = prevSlide;
